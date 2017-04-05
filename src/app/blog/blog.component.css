@@ -12,7 +12,7 @@ a {
 }
 
 a:hover {
-    color: #FFFFFF;
+    color: #00c8d7;
 }
 
 p {
@@ -25,7 +25,7 @@ h1 {
 }
 
 .container {
-    width: 750px;
+    width: 970px;
     padding-right: 15px;
     padding-left: 15px;
     margin-left: auto;
@@ -47,6 +47,30 @@ h1 {
     color: #999;
 }
 
-.blog-sidebar {
-    float: right;
+.blogPostMeta {
+    margin-bottom: 40px;
+    color: #999;
+}
+
+.blogPostContent {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.sidebarModuleAbout {
+    background-color: #f5f5f5;
+}
+
+.sidebarModule {
+    padding: 15px;
+}
+
+.listUnstyled {
+    list-style: none;
+    padding-left: 0;
 }

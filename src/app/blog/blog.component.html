@@ -9,26 +9,55 @@
             <h1>Blog</h1>
         </div>
     </div>
-
     <div class="container">
-        <h1 class="blog-title">AnCze blog programistyczny</h1>
-        <p class="blog-description">Blog dokumentujący moją zmianę zawodu i ścieżkę rozwoju jako developera.</p>
-    </div>
+        <div>
+            <h1 class="blog-title">AnCze blog programistyczny</h1>
+            <p class="blog-description">Blog dokumentujący moją zmianę zawodu i ścieżkę rozwoju jako developera.</p>
+        </div>
 
-    <div class="row container">
-        <div class="col-sm-8">
-            <div>
-                <h2>Pierwszy wpis</h2>
-                <p>"Kwiecień, 2017 by "<a href="">AnCze</a></p>
-                <p>Początek tekstu pierwszego wpisu</p>
-                <hr>
-                <p>Tekst pierwszego wpisu</p>
+        <div class="row">
+            <div class="col-sm-8">
+                <article>
+                    <header>
+                        <h2><a href="#">Od czego wszystko się zaczęło</a></h2>
+                        <p class="blogPostMeta">"Kwiecień, 2017 by "<a href="">AnCze</a></p>
+                    </header>
+                    <div>
+                        <img src="app/images/aF.jpg" alt="Photo" width="250" height="300" align="middle">
+                    </div>
+                    <div class="blogPostContent">
+                        <p>Tekst pierwszego wpisu</p>
+                    </div>
+                    <hr>
+                </article>
+                <nav>
+                    <ul class="pager">
+                        <li><a href="#">Poprzedni</a></li>
+                        <li><a href="#">Następny</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+                <div class="sidebarModule sidebarModuleAbout">
+                    <h4>O mnie</h4>
+                    <p>Jeszcze nie wiem co ale coś tutaj napisze i będzie zajebiście.</p>
+                </div>
+                <div class="sidebarModule">
+                    <h4>Archwia</h4>
+                    <ol class="listUnstyled">
+                        <li><a href="">Kwiecień 2017</a></li>
+                    </ol>
+                </div>
+                <div class="sidebarModule">
+                    <h4>Gdzie indziej</h4>
+                    <ol class="listUnstyled">
+                        <li><a href="https://github.com/AnCze">GitHub</a></li>
+                        <li><a href="https://twitter.com/Andrzej_Wro?lang=pl">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/andrzej.wroclaw.1">Facebook</a></li>
+                    </ol>
+                </div>
             </div>
         </div>
-        <div class="col-sm-3">
-            <p>Side bar test</p>
-        </div>
+
     </div>
-
-
 </body>
