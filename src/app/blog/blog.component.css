@@ -1,0 +1,52 @@
+.masthead {
+    background-color: #595959;
+}
+
+.masthead-text {
+    margin: 0 0 0 30px;
+    color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+h1 {
+    text-align: left;
+    margin: 0;
+}
+
+.container {
+    width: 750px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+.blog-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: normal;
+    color: #333;
+    text-align: left;
+}
+
+.blog-description {
+    font-size: 20px;
+    color: #999;
+}
+
+.blog-sidebar {
+    float: right;
+}
