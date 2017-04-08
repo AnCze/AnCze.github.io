@@ -9,7 +9,33 @@
             <h1>Kontakt</h1>
         </div>
     </div>
-    <div>
-
+    <div class="container">
+        <div class="col-sm-8 divAdjustment">
+            <form class="labelStyle contactForm">
+                <div>
+                    <label for="nameInput">Imię <span>(wymagane)</span></label>
+                    <input type="text" id="nameInput">
+                </div>
+                <div>
+                    <label for="emailInput">Email <span>(wymagane)</span></label>
+                    <input type="email" id="emailInput">
+                </div>
+                <div>
+                    <label for="messageInput">Wiadomość <span>(wymagane)</span></label>
+                    <textarea id="messageInput" rows="10"></textarea>
+                </div>
+                <div id="messageInput">
+                    <button type="submit" class="btn btn-default btn-block">Wyślij</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 divSidebarAdjustment">
+            <h4>Gdzie indziej</h4>
+            <ol class="listUnstyled">
+                <li><a href="https://github.com/AnCze">GitHub</a></li>
+                <li><a href="https://twitter.com/Andrzej_Wro?lang=pl">Twitter</a></li>
+                <li><a href="https://www.facebook.com/andrzej.wroclaw.1">Facebook</a></li>
+            </ol>
+        </div>
     </div>
 </body>

@@ -5,11 +5,11 @@ import { Component } from '@angular/core';
   template: `
   <div>
       <div>
-        <nav class="navItem">
-          <a class="bootstrapOverrides" [routerLink]="['/home']">Home</a>          
-          <a class="bootstrapOverrides" [routerLink]="['/blog']">Blog</a>
-          <a class="bootstrapOverrides" [routerLink]="['/o mnie']">O mnie</a>
-          <a class="bootstrapOverrides" [routerLink]="['/kontakt']">Kontakt</a>
+        <nav class="navBar">
+          <a class="navItem" [routerLink]="['/home']">Home</a>          
+          <a class="navItem" [routerLink]="['/blog']">Blog</a>
+          <a class="navItem" [routerLink]="['/o mnie']">O mnie</a>
+          <a class="navItem" [routerLink]="['/kontakt']">Kontakt</a>
         </nav>
       </div>
           <div>
