@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
 })
 
 export class ContactComponent{
+public contactEnvelope: ContactEnvelope;
 
+sendMessage (){
+
+}
+
+}
+
+export class ContactEnvelope{
+
+    constructor(
+        public firstName: string,
+        public email: string,
+        public message: string
+    ){}
+    
 }
