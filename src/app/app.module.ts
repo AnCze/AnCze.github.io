@@ -1,16 +1,21 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
 import { AboutMeComponent } from './aboutMe/aboutMe.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormPoster } from './services/form-poster.service';
 
 @NgModule({
   imports:      [ 
     BrowserModule,
+    FormsModule,
+    HttpModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent},
       { path: "blog", component: BlogComponent},
@@ -21,6 +26,7 @@ import { ContactComponent } from './contact/contact.component';
     ]), 
     ],
   declarations: [ AppComponent, BlogComponent, HomeComponent, AboutMeComponent, ContactComponent ],
+  providers: [FormPoster],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

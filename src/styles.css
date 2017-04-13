@@ -140,8 +140,7 @@ h3 {
     font-weight: normal;
 }
 
-.contactForm input,
-textarea {
+.contactForm {
     border: 1px dashed #dddddd;
     width: 300px;
     max-width: 98%;
@@ -149,6 +148,26 @@ textarea {
     display: block;
     padding: 15px;
     background-color: #f3f3f3;
+    font-weight: normal;
+}
+
+.contactFormMessage {
+    border: 1px dashed #dddddd;
+    max-width: 98%;
+    margin-bottom: 13px;
+    display: block;
+    padding: 15px;
+    background-color: #f3f3f3;
+    font-weight: normal;
+}
+
+.inputErrorMessageStyle {
+    width: 300px;
+    font-weight: normal;
+}
+
+.textAreaErrorMessageStyle {
+    width: 590px;
     font-weight: normal;
 }
 
@@ -164,7 +183,16 @@ textarea {
     padding-top: 270px;
 }
 
-#messageInput {
-    width: 500px;
-    max-width: 98%;
+.sendButtonDiv {
+    width: 590px;
+}
+
+#contactFormSendButton {
+    background-color: #595959;
+    color: #000000;
+    font-weight: bold;
+}
+
+#contactFormSendButton:hover {
+    background-color: #00c8d7;
 }
