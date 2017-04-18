@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutMeComponent } from './aboutMe/aboutMe.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormPoster } from './services/form-poster.service';
+import { BlogTopicComponent } from './blog/blog-topic.component';
+import { EventService }from './services/event.service';
 
 @NgModule({
   imports:      [ 
@@ -25,8 +27,8 @@ import { FormPoster } from './services/form-poster.service';
       { path: "**", redirectTo: "home", pathMatch: "full"}
     ]), 
     ],
-  declarations: [ AppComponent, BlogComponent, HomeComponent, AboutMeComponent, ContactComponent ],
-  providers: [FormPoster],
+  declarations: [ AppComponent, BlogComponent, BlogTopicComponent, HomeComponent, AboutMeComponent, ContactComponent ],
+  providers: [ FormPoster, EventService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
