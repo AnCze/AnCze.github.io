@@ -18,5 +18,6 @@ export const appRoutes: Routes = [
       { path: "kontakt", component: ContactComponent},
       { path: "404", component: Error404Component},
       { path: "", redirectTo: "home", pathMatch: "full"},
-      { path: "**", redirectTo: "home", pathMatch: "full"}
+      //{ path: "**", redirectTo: "home", pathMatch: "full"},
+      { path: "user", loadChildren: "app/user/user.module#UserModule"}
     ]
