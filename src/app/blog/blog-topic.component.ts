@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     template: `
                 <article>
                     <header>
-                        <h2><a href="#">{{event.title}}</a></h2>
+                        <h2>{{event.title}}</h2>
                         <p class="blogPostMeta">{{event.date}}<a href="">AnCze</a></p>
                     </header>
                     <div>
@@ -13,7 +13,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                     </div>
                     <div class="blogPostContent">
                         <p>{{event.body}}</p>
-                        <button id="anczeButton" class="btn btn-default" (click)="readMore()">Czytaj dalej</button>
+                        <button id="anczeButton" class="btn btn-default"  [routerLink]="['/blog', event.id]" (click)="readMore()">Czytaj dalej</button>
                     </div>
                     <hr>
                 </article>
