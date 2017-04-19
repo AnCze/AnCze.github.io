@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ITopic } from '../models/topic.model';
 
 @Component({
     selector: 'blog-topic',
@@ -21,7 +22,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class BlogTopicComponent{
-   @Input() event: any
+   @Input() event: ITopic
    @Output() eventClick = new EventEmitter()
 
    readMore(){

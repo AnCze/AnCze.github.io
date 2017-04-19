@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../services/event.service';
 import { ActivatedRoute } from '@angular/router';
+import { ITopic } from '../models/topic.model';
 
 @Component({
     //selector: 'sm-blog',    
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class BlogComponent implements OnInit {
-    events: any[]
+    events: ITopic[]
     constructor(private eventService: EventService, private route: ActivatedRoute){
     }
 
@@ -16,7 +17,7 @@ export class BlogComponent implements OnInit {
         this.events = this.route.snapshot.data['events']        
     }
 
-    handleEventClicked(data) {
+    handleEventClicked(data: any) {
     console.log('received: ', data)
 }
 }

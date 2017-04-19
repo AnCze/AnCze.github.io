@@ -1,40 +1,41 @@
 import { Injectable } from '@angular/core'
-import { Subject } from 'rxjs/RX'
+import { Subject, Observable } from 'rxjs/RX'
+import { ITopic } from '../models/topic.model'
 
 @Injectable()
 export class EventService{
-getEvents(){
-    let subject = new Subject()
+getEvents(): Observable<ITopic[]>{             // Subject is a type of observable
+    let subject = new Subject<ITopic[]>()
     setTimeout(() => {subject.next(events); subject.complete();}, 100)
 return subject
 }
 
-getEvent(id: number){
+getEvent(id: number): ITopic{
     return events.find(event => event.id === id)
 }
 
 }
 
-const events = [
+const events: ITopic[] = [
     {
         id: 1,
         title: 'Skąd ten pomysł?!',
         image: 'app/images/ideaPhoto.jpg',
-        date: '23/04/2017',
+        date: new Date('23/04/2017'),
         body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
     },
     {
         id: 2,
         title: 'Sam nie wiem?!',
         image: 'app/images/ideaPhoto.jpg',
-        date: '23/04/2017',
+        date: new Date('23/04/2017'),
         body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
     },
     {
         id: 3,
         title: 'Jakoś idzie?!',
         image: 'app/images/ideaPhoto.jpg',
-        date: '23/04/2017',
+        date: new Date('23/04/2017'),
         body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
     }
     ]
