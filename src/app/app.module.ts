@@ -18,6 +18,7 @@ import { Error404Component } from './errors/404.component';
 import { RouteActivatorService } from './services/route-activator.service';
 import { CreateBlogTopic } from './blog/create-blog-topic.component';
 import { BlogResolver } from './services/blog-resolver.service';
+import { UserAuthService } from './services/user-auth.service';
 
 @NgModule({
   imports:      [ 
@@ -42,6 +43,7 @@ import { BlogResolver } from './services/blog-resolver.service';
     EventService, 
     RouteActivatorService,
     BlogResolver,
+    UserAuthService,
     { 
       provide: 'canDeactivateCreateEvent', 
       useValue: checkDirtyState 

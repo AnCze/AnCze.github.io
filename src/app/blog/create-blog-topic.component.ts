@@ -7,8 +7,8 @@ template: `
 <hr>
 <h3>[Create new topic will go here]</h3>
 
-<button id="anczeButton" class="btn btn-default">Zapisz</button>
-<button id="anczeButton" class="btn btn-default" (click)="cancel()" >Anuluj</button>
+<button  class="btn btn-primary">Zapisz</button>
+<button  class="btn btn-default" (click)="cancel()" >Anuluj</button>
 `
 })
 

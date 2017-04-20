@@ -14,7 +14,7 @@ import { ITopic } from '../models/topic.model';
                     </div>
                     <div class="blogPostContent">
                         <p>{{event.body}}</p>
-                        <button id="anczeButton" class="btn btn-default"  [routerLink]="['/blog', event.id]" (click)="readMore()">Czytaj dalej</button>
+                        <button  class="btn btn-primary"  [routerLink]="['/blog', event.id]" (click)="readMore()">Czytaj dalej</button>
                     </div>
                     <hr>
                 </article>

@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common' // in app module we import Browse
 import { RouterModule } from '@angular/router'
 import { userRoutes } from './user.routes'
 import { ProfileComponent } from './profile.component'
+import { LoginComponent } from './login.component'
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
 imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(userRoutes) // in app module we call forRoot but in feature module we call forChild
 ],
 declarations: [
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
 ],
 providers: [
 

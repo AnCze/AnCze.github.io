@@ -15,7 +15,7 @@
                 <div>
                     <!-- add to div above for bootstrap validation input class="form-group" [class.has-error]="nameImput.invalid && nameImput.touched" -->
                     <label class="labelStyle">Imię <span>(wymagane)</span></label>
-                    <input #nameImput="ngModel" maxlength="30" class="contactForm" type="text" name="name" required [ngModel]='contactEnvelope.nameInput' (ngModelChange)='imputNameToUpperCase($event)'>
+                    <input #nameImput="ngModel" maxlength="30" class="contactForm" type="text" name="name" required [(ngModel)]='contactEnvelope.nameInput' (ngModelChange)='imputNameToUpperCase($event)'>
                     <div *ngIf="nameImput.invalid && nameImput.touched" class="alert alert-danger inputErrorMessageStyle">
                         Wprowadź imię.
                     </div>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="sendButtonDiv">
-                    <button id="anczeButton" type="submit" class="btn btn-default btn-block" [disabled]="form.invalid" (click)="sendMessage(form)">Wyślij</button>
+                    <button id="anczeButton" type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid" (click)="sendMessage(form)">Wyślij</button>
                 </div>
             </form>
         </div>
