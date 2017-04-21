@@ -3,15 +3,18 @@
 <div class="col-md-4">
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" autocomplete="off" novalidate>
         <div class="form-group">
-            <label class="labelStyle" for="userName">Nazwa użytkownika:</label>
+            <label for="userName">Nazwa użytkownika:</label>
+            <em *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName.touched || mouseoverLogin)">Wymagane</em>
             <input id="userName" type="text" class="form-control" placeholder="Nazwa uzytkownika..." name="userName" (ngModel)="userName" required/>
         </div>
         <div class="form-group">
-            <label class="labelStyle" for="password">Haslo:</label>
-            <input id="password" type="password" class="form-control" placeholder="Haslo..." name="password" (ngModel)="password" required/>
+            <label for="password">Haslo:</label>
+            <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password.touched || mouseoverLogin)">Wymagane</em>
+            <input id="password" type="password" class="form-control" placeholder="Hasło..." name="password" (ngModel)="password" required/>
         </div>
-
-        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Zaloguj</button>
+        <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Zaloguj</button>
+        </span>
         <button (click)='cancel()' type="button" class="btn btn-default">Anuluj</button>
     </form>
 </div>
