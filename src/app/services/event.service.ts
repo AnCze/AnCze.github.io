@@ -14,28 +14,34 @@ getEvent(id: number): ITopic{
     return events.find(event => event.id === id)
 }
 
+saveEvent(event: any){
+    event.id = 999;
+    event.session =[];
+    events.push(event);
+}
+
 }
 
 const events: ITopic[] = [
     {
         id: 1,
         title: 'Skąd ten pomysł?!',
+        date: new Date('23/04/2017'),      
         image: 'app/images/ideaPhoto.jpg',
-        date: new Date('23/04/2017'),
         body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
     },
     {
         id: 2,
         title: 'Sam nie wiem?!',
-        image: 'app/images/ideaPhoto.jpg',
         date: new Date('23/04/2017'),
+        image: 'app/images/ideaPhoto.jpg',
         body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
     },
     {
         id: 3,
         title: 'Jakoś idzie?!',
-        image: 'app/images/ideaPhoto.jpg',
         date: new Date('23/04/2017'),
+        image: 'app/images/ideaPhoto.jpg',
         body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
     }
     ]

@@ -217,6 +217,18 @@ em {
     color: #999;
 }
 
+.error textarea {
+    background-color: #E3C3C5
+}
+
+.error::-webkit-textarea-placeholder {
+    color: #999;
+}
+
+.error:-ms-textarea-placeholder {
+    color: #999;
+}
+
 #anczeButton {
     background-color: #595959;
     color: #ffffff;

@@ -1,0 +1,43 @@
+<head>
+    <link rel="icon" href="../../favicon.ico">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="masthead">
+        <div class="masthead-text mastheadContainer">
+            <h1>Nowy wpis</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-sm-8 divAdjustment">
+            <form #newTopicForm="ngForm" (ngSubmit)="saveEvent(newTopicForm.value)" autocomplete="off" novalidate>
+                <div class="form-group" [ngClass]="{'error': newTopicForm.controls.title?.invalid && newTopicForm.controls.title?.touched}">
+                    <label for="eventTitle">Nazwa wpisu:</label>
+                    <em *ngIf="newTopicForm.controls.title?.invalid && (newTopicForm.controls.title?.touched)">Wymagane</em>
+                    <input (ngModel)="title" name="title" required id="title" type="text" class="form-control" placeholder="Nazwa wpisu..." />
+                </div>
+                <div class="form-group" [ngClass]="{'error': newTopicForm.controls.date?.invalid && newTopicForm.controls.date?.touched}">
+                    <label for="eventDate">Data wpisu:</label>
+                    <em *ngIf="newTopicForm.controls.date?.invalid && (newTopicForm.controls.date?.touched)">Wymagane</em>
+                    <input (ngModel)="date" name="date" required id="eventDate" type="text" class="form-control" placeholder="Format (dd/mm/yyyy)..." />
+                </div>
+                <div class="form-group" [ngClass]="{'error': newTopicForm.controls.image?.invalid && newTopicForm.controls.image?.touched}">
+                    <label for="image">Zdjęcie:</label>
+                    <em *ngIf="newTopicForm.controls.image?.invalid && newTopicForm.controls.image?.touched && newTopicForm.controls.image?.errors.required">Wymagane</em>
+                    <em *ngIf="newTopicForm.controls.image?.invalid && newTopicForm.controls.image?.touched  && newTopicForm.controls.image?.errors.pattern">Musi być png lub jpg url</em>
+                    <input (ngModel)="image" name="image" required pattern=".*\/.*.(png|jpg)" id="image" type="text" class="form-control" placeholder="Url of image..." />
+                    <img />
+                </div>
+                <div class="form-group" [ngClass]="{'error': newTopicForm.controls.body?.invalid && newTopicForm.controls.body?.touched}">
+                    <label for="topicBody">Treść wpisu:</label>
+                    <em *ngIf="newTopicForm.controls.body?.invalid && (newTopicForm.controls.body?.touched)">Wymagane</em>
+                    <textarea (ngModel)="body" name="body" required id="topicBody" type="text" class="form-control" placeholder="Treść wpisu..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Zapisz</button>
+                <button type="button" [disabled]="newTopicForm.invalid" class="btn btn-default" (click)="cancel()">Anuluj</button>
+            </form>
+        </div>
+    </div>
+</body>

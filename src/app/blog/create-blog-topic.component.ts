@@ -1,24 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { EventService } from '../services/event.service';
 
 @Component({
-template: `
-<h1>Nowy Wpis</h1>
-<hr>
-<h3>[Create new topic will go here]</h3>
-
-<button  class="btn btn-primary">Zapisz</button>
-<button  class="btn btn-default" (click)="cancel()" >Anuluj</button>
-`
+templateUrl: 'app/blog/create-blog-topic.component.html'
 })
 
 export class CreateBlogTopic {
     isDirty: boolean = true
-    constructor(private router: Router){
+    constructor(private router: Router, private eventService: EventService){
 
     }
 
-cancel(){
-this.router.navigate(['/blog'])
-}
+    saveEvent(formValues: any){
+        this.eventService.saveEvent(formValues)
+        this.isDirty = false
+        this.router.navigate(['/blog'])
+    }
+
+    cancel(){
+        this.router.navigate(['/blog'])
+    }   
 }
