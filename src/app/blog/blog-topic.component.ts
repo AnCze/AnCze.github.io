@@ -3,22 +3,7 @@ import { ITopic } from '../models/topic.model';
 
 @Component({
     selector: 'blog-topic',
-    template: `
-                <article>
-                    <header>
-                        <h2>{{event.title}}</h2>
-                        <p class="blogPostMeta">{{event.date}}<a href="">AnCze</a></p>
-                    </header>
-                    <div>
-                        <img class="blogPostPhoto" [src]='event.image'/>
-                    </div>
-                    <div class="blogPostContent">
-                        <p>{{event.body}}</p>
-                        <button  class="btn btn-primary"  [routerLink]="['/blog', event.id]" (click)="readMore()">Czytaj dalej</button>
-                    </div>
-                    <hr>
-                </article>
-    `
+    templateUrl: 'app/blog/blog-topic.component.html'
 })
 
 export class BlogTopicComponent{
