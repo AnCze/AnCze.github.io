@@ -16,7 +16,7 @@
                 <article>
                     <header>
                         <h2>{{event?.title}}</h2>
-                        <p class="blogPostMeta">{{event?.date}}<a href="">AnCze</a></p>
+                        <p class="blogPostMeta">Data: {{event?.date | date: 'd/M/y'}}<a href="/o mnie">AnCze</a></p>
                     </header>
                     <div>
                         <img class="blogPostPhoto" [src]='event?.image' />

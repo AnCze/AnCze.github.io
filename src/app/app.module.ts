@@ -19,6 +19,7 @@ import { RouteActivatorService } from './services/route-activator.service';
 import { CreateBlogTopic } from './blog/create-blog-topic.component';
 import { BlogResolver } from './services/blog-resolver.service';
 import { UserAuthService } from './services/user-auth.service';
+import { ToastrService } from './services/toastr.service';
 
 @NgModule({
   imports:      [ 
@@ -45,6 +46,7 @@ import { UserAuthService } from './services/user-auth.service';
     RouteActivatorService,
     BlogResolver,
     UserAuthService,
+    ToastrService,
     { 
       provide: 'canDeactivateCreateEvent', 
       useValue: checkDirtyState 
