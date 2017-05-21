@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-sm-8">
                 <hr>
-                <blog-topic *ngFor="let event of events" [event]="event" (eventClick)="handleEventClicked($event)"></blog-topic>
+                <blog-topic *ngFor="let event of activeEvents" [event]="event" (eventClick)="handleEventClicked($event)"></blog-topic>
                 <nav>
                     <ul class="pager">
                         <li><a href="#">Poprzedni</a></li>
@@ -37,13 +37,16 @@
                 <div class="sidebarModule sidebarModuleForKategorie">
                     <hr>
                     <h3>Kategorie</h3>
+                    <!--<button [class.active]="filterBy==='typeScript'" (click)="filterBy='typeScript'">TypeScript</button>-->
                     <ol class="listUnstyled">
-                        <li class="categoryItem"><a href="">.Net</a></li>
-                        <li class="categoryItem"><a href="">C#</a></li>
-                        <li class="categoryItem"><a href="">Angular</a></li>
-                        <li class="categoryItem"><a href="">TypeScript</a></li>
-                        <li class="categoryItem"><a href="">HTML</a></li>
-                        <li class="categoryItem"><a href="">CSS</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='wszystkie'" (click)="filterBy='wszystkie'; changeFilter()">Wszystkie</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='.net'" (click)="filterBy='.net'; changeFilter()">.Net</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='c#'" (click)="filterBy='c#'; changeFilter()">C#</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='angular2'" (click)="filterBy='angular2'; changeFilter()">Angular2</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='typescript'" (click)="filterBy='typescript'; changeFilter()">TypeScript</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='html'" (click)="filterBy='html'; changeFilter()">HTML</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='css'" (click)="filterBy='css'; changeFilter()">CSS</a></li>
+                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='inne'" (click)="filterBy='inne'; changeFilter()">Inne</a></li>
                     </ol>
                 </div>
                 <div class="sidebarModule">

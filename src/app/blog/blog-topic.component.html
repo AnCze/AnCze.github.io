@@ -1,7 +1,7 @@
 <article>
     <header>
         <h2>{{event.title}}</h2>
-        <p class="blogPostMeta">Data: {{event.date | date: 'd/M/y'}}<a href="/o mnie">AnCze</a></p>
+        <p class="blogPostMeta">Data: {{event.date | date: 'd/M/y'}} Kategoria: {{event.category}}, <a href="/o mnie">AnCze</a></p>
     </header>
     <div>
         <img class="blogPostPhoto" [src]='event.image' />

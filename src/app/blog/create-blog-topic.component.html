@@ -22,6 +22,16 @@
                     <em *ngIf="newTopicForm.controls.date?.invalid && (newTopicForm.controls.date?.touched)">Wymagane</em>
                     <input (ngModel)="date" name="date" required id="eventDate" type="text" class="form-control" placeholder="Format (dd/mm/yyyy)..." />
                 </div>
+                <div class="form-group" [ngClass]="{'error': newTopicForm.controls.category?.invalid && newTopicForm.controls.category?.touched}">
+                    <label for="eventCategory">Kategoria:</label>
+                    <!--<em *ngIf="newTopicForm.controls.date?.invalid && (newTopicForm.controls.category?.touched)">Wymagane</em>-->
+                    <select (ngModel)="category" name="category" id="eventCategory" type="text" class="form-control">
+                        <option value="default">Wybierz kategorie...</option>
+                        <option *ngFor="let category of categories">
+                            {{category}}
+                        </option>
+                    </select>
+                </div>
                 <div class="form-group" [ngClass]="{'error': newTopicForm.controls.image?.invalid && newTopicForm.controls.image?.touched}">
                     <label for="image">Zdjęcie:</label>
                     <em *ngIf="newTopicForm.controls.image?.invalid && newTopicForm.controls.image?.touched && newTopicForm.controls.image?.errors.required">Wymagane</em>
@@ -35,7 +45,7 @@
                     <textarea (ngModel)="body" name="body" required id="topicBody" type="text" class="form-control" placeholder="Treść wpisu..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Zapisz</button>
+                <button type="submit" [disabled]="newTopicForm.invalid" class="btn btn-primary">Zapisz</button>
                 <button type="button" [disabled]="newTopicForm.invalid" class="btn btn-default" (click)="cancel()">Anuluj</button>
             </form>
         </div>

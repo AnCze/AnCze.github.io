@@ -8,6 +8,7 @@ templateUrl: 'app/blog/create-blog-topic.component.html'
 
 export class CreateBlogTopic {
     isDirty: boolean = true
+    categories = ['.Net', 'C#', 'Angular2', 'TypeScript', 'HTML', 'CSS', 'Inne'];
     constructor(private router: Router, private eventService: EventService){
 
     }
