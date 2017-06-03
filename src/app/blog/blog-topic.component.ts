@@ -3,7 +3,8 @@ import { ITopic } from '../models/topic.model';
 
 @Component({
     selector: 'blog-topic',
-    templateUrl: 'app/blog/blog-topic.component.html'
+    templateUrl: 'app/blog/blog-topic.component.html',
+    styleUrls: ['app/styles.css']
 })
 
 export class BlogTopicComponent {

@@ -229,6 +229,13 @@ em {
     color: #999;
 }
 
+.textSnippet {
+    max-width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #anczeButton {
     background-color: #595959;
     color: #ffffff;

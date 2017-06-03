@@ -4,7 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ITopic } from '../models/topic.model';
 
 @Component({
-    templateUrl: 'app/topic-details/topic-details.component.html'
+    selector: 'topic-detail',
+    templateUrl: 'app/topic-details/topic-details.component.html',
+    styleUrls: ['app/styles.css']
 })
 
 export class TopicDetailsComponent{

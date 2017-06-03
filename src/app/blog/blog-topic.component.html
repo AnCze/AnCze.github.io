@@ -7,7 +7,7 @@
         <img class="blogPostPhoto" [src]='event.image' />
     </div>
     <div class="blogPostContent">
-        <p>{{event.body}}</p>
+        <p class="textSnippet">{{event.body}}</p>
         <button class="btn btn-primary" [routerLink]="['/blog', event.id]" (click)="readMore()">Czytaj dalej</button>
     </div>
     <hr>

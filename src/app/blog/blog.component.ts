@@ -5,6 +5,7 @@ import { ITopic } from '../models/topic.model';
 
 @Component({
     templateUrl: 'app/blog/blog.component.html',
+    styleUrls: ['app/styles.css']
 })
 
 export class BlogComponent implements OnInit { 

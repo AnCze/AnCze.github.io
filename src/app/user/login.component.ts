@@ -6,17 +6,17 @@ import { Router } from '@angular/router';
     templateUrl: 'app/user/login.component.html'
 })
 
-export class LoginComponent{
-    constructor(private userAuthService: UserAuthService, private router: Router){
+export class LoginComponent {
+    constructor(private userAuthService: UserAuthService, private router: Router) {
 
     }
 
-login(loginFormValues: any){
-    this.userAuthService.loginUser(loginFormValues.userName, loginFormValues.password)
-    this.router.navigate(['blog'])
-}
+    login(loginFormValues: any) {
+        this.userAuthService.loginUser(loginFormValues.userName, loginFormValues.password)
+        this.router.navigate(['blog'])
+    }
 
-cancel(){
-    this.router.navigate(['blog'])
-}
+    cancel() {
+        this.router.navigate(['blog'])
+    }
 }

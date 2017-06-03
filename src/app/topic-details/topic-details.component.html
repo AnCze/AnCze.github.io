@@ -1,6 +1,5 @@
 <head>
     <link rel="icon" href="../../favicon.ico">
-    <link href="../../styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -11,7 +10,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8 col-sm-offset-2 ">
                 <hr>
                 <article>
                     <header>
@@ -23,57 +22,11 @@
                     </div>
                     <div class="blogPostContent">
                         <p>{{event?.body}}</p>
+                        <button class="btn btn-primary" [routerLink]="['/blog']" (click)="readMore()">Powrót</button>
                     </div>
                     <hr>
                 </article>
             </div>
-            <div class="col-sm-3 col-sm-offset-1">
-                <hr>
-                <div class="sidebarModule sidebarModuleAbout">
-                    <h3>O mnie</h3>
-                    <a href="">
-                        <p>Nazywam się Andrzej w programowaniu interesuje mnie głównie backend ...</p>
-                    </a>
-                </div>
-                <div class="sidebarModule sidebarModuleForKategorie">
-                    <hr>
-                    <h3>Kategorie</h3>
-                    <ol class="listUnstyled">
-                        <li class="categoryItem"><a href="">.Net</a></li>
-                        <li class="categoryItem"><a href="">C#</a></li>
-                        <li class="categoryItem"><a href="">Angular</a></li>
-                        <li class="categoryItem"><a href="">TypeScript</a></li>
-                        <li class="categoryItem"><a href="">HTML</a></li>
-                        <li class="categoryItem"><a href="">CSS</a></li>
-                    </ol>
-                </div>
-                <div class="sidebarModule">
-                    <hr>
-                    <h3>Archwia</h3>
-                    <ol class="listUnstyled">
-                        <li><a href="">Kwiecień 2017</a></li>
-                    </ol>
-                </div>
-                <div class="sidebarModule">
-                    <hr>
-                    <h3>Więcej</h3>
-                    <ol class="listUnstyled">
-                        <li class="categoryItem">
-                            <a><img src="app/images/rssImage.png" alt="RSS" width="30" height="30">RSS</a>
-                        </li>
-                        <li class="categoryItem"><img src="app/images/githubImage.png" alt="GIT" width="30" height="30">
-                            <a href="https://github.com/AnCze">GitHub</a></li>
-                        <li class="categoryItem"><img src="app/images/twitterImage.png" alt="TW" width="30" height="30">
-                            <a href="https://twitter.com/Andrzej_Wro?lang=pl">Twitter</a></li>
-                        <li class="categoryItem"><img src="app/images/facebookImage.png" alt="FB" width="30" height="30">
-                            <a href="https://www.facebook.com/andrzej.wroclaw.1">Facebook</a></li>
-                    </ol>
-                </div>
-            </div>
         </div>
-
     </div>
 </body>
-<footer class="blogFooter">
-    <a href="#top">Back to top</a>
-</footer>

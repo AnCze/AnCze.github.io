@@ -6,7 +6,8 @@ import { ToastrService } from '../services/toastr.service';
 
 @Component({
     selector: 'sm-contact',
-    templateUrl: 'app/contact/contact.component.html'
+    templateUrl: 'app/contact/contact.component.html',
+    styleUrls: ['app/styles.css']
 })
 
 export class ContactComponent{

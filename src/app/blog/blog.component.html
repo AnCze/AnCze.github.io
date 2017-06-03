@@ -1,6 +1,5 @@
 <head>
     <link rel="icon" href="../../favicon.ico">
-    <link href="../../styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -12,7 +11,7 @@
     <div class="container">
         <div class="blogHeader">
             <h1 class="blog-title">AnCze blog programistyczny</h1>
-            <p class="blog-description">Blog dokumentujący moją zmianę zawodu i ścieżkę rozwoju jako developera.</p>
+            <p class="blog-description">Blog programistyczny dokumentujący moją zmianę zawodu i ścieżkę rozwoju jako developera.</p>
         </div>
 
         <div class="row">
@@ -28,32 +27,17 @@
             </div>
             <div class="col-sm-3 col-sm-offset-1">
                 <hr>
-                <div class="sidebarModule sidebarModuleAbout">
-                    <h3>O mnie</h3>
-                    <a href="">
-                        <p>Nazywam się Andrzej w programowaniu interesuje mnie głównie backend ...</p>
-                    </a>
-                </div>
                 <div class="sidebarModule sidebarModuleForKategorie">
-                    <hr>
                     <h3>Kategorie</h3>
-                    <!--<button [class.active]="filterBy==='typeScript'" (click)="filterBy='typeScript'">TypeScript</button>-->
                     <ol class="listUnstyled">
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='wszystkie'" (click)="filterBy='wszystkie'; changeFilter()">Wszystkie</a></li>
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='.net'" (click)="filterBy='.net'; changeFilter()">.Net</a></li>
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='c#'" (click)="filterBy='c#'; changeFilter()">C#</a></li>
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='angular2'" (click)="filterBy='angular2'; changeFilter()">Angular2</a></li>
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='typescript'" (click)="filterBy='typescript'; changeFilter()">TypeScript</a></li>
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='html'" (click)="filterBy='html'; changeFilter()">HTML</a></li>
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='css'" (click)="filterBy='css'; changeFilter()">CSS</a></li>
-                        <li class="categoryItem"><a role="button" [class.active]="filterBy==='inne'" (click)="filterBy='inne'; changeFilter()">Inne</a></li>
-                    </ol>
-                </div>
-                <div class="sidebarModule">
-                    <hr>
-                    <h3>Archwia</h3>
-                    <ol class="listUnstyled">
-                        <li><a href="">Kwiecień 2017</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='wszystkie'; changeFilter()">Wszystkie</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='.net'; changeFilter()">.Net</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='c#'; changeFilter()">C#</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='angular2'; changeFilter()">Angular2</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='typescript'; changeFilter()">TypeScript</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='html'; changeFilter()">HTML</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='css'; changeFilter()">CSS</a></li>
+                        <li class="categoryItem"><a role="button" (click)="filterBy='inne'; changeFilter()">Inne</a></li>
                     </ol>
                 </div>
                 <div class="sidebarModule">

@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { EventService } from '../services/event.service';
 
 @Component({
-templateUrl: 'app/blog/create-blog-topic.component.html'
+    templateUrl: 'app/blog/create-blog-topic.component.html',
+    styleUrls: ['app/styles.css']
 })
 
 export class CreateBlogTopic {

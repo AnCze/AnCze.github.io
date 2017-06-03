@@ -29,7 +29,7 @@ const events: ITopic[] = [
         date: new Date('01/23/2017'),
         category: 'TypeScript',      
         image: 'app/images/ideaPhoto.jpg',
-        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
+        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać'
     },
     {
         id: 2,
@@ -37,7 +37,7 @@ const events: ITopic[] = [
         date: new Date('02/23/2017'),
         category: 'CSS',
         image: 'app/images/ideaPhoto.jpg',
-        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
+        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać'
     },
     {
         id: 3,
@@ -45,6 +45,6 @@ const events: ITopic[] = [
         date: new Date('03/23/2017'),
         category: 'HTML',
         image: 'app/images/ideaPhoto.jpg',
-        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać'
+        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać'
     }
     ]
