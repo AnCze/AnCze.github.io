@@ -1,8 +1,8 @@
 export interface ITopic {
     id: number,
     title: string,
-    date: Date,
-    body: string,
+    date: string,
+    topicBody: string,
     category: string,
-    image?: string 
+    image: string 
     }

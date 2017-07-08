@@ -10,31 +10,30 @@
     </div>
     <div class="container">
         <div class="col-sm-8 divAdjustment">
-            <form #form="ngForm" novalidate>
-                <div>
-                    <!-- add to div above for bootstrap validation input class="form-group" [class.has-error]="nameImput.invalid && nameImput.touched" -->
+            <form #form="ngForm" (ngSubmit)="sendMessage(form)" novalidate>
+                <div class="form-group">
                     <label class="labelStyle">Imię <span>(wymagane)</span></label>
-                    <input #nameImput="ngModel" maxlength="30" class="contactForm" type="text" name="name" required [(ngModel)]='contactEnvelope.nameInput' (ngModelChange)='imputNameToUpperCase($event)'>
-                    <div *ngIf="nameImput.invalid && nameImput.touched" class="alert alert-danger inputErrorMessageStyle">
+                    <input #firstName="ngModel" maxlength="30" class="contactForm" type="text" name="firstName" required [(ngModel)]='contactEnvelope.firstName' (ngModelChange)='imputNameToUpperCase($event)'>
+                    <div *ngIf="firstName.invalid && firstName.touched" class="alert alert-danger inputErrorMessageStyle">
                         Wprowadź imię.
                     </div>
                 </div>
-                <div>
+                <div class="form-group">
                     <label class="labelStyle">Email <span>(wymagane)</span></label>
-                    <input #emailInput="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="contactForm" type="email" name="email" required [(ngModel)]='contactEnvelope.emailInput'>
-                    <div *ngIf="emailInput.invalid && emailInput.touched" class="alert alert-danger inputErrorMessageStyle">
+                    <input #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="contactForm" type="email" name="email" required [(ngModel)]='contactEnvelope.email'>
+                    <div *ngIf="email.invalid && email.touched" class="alert alert-danger inputErrorMessageStyle">
                         Wprowadź poprawny email.
                     </div>
                 </div>
-                <div>
+                <div class="form-group">
                     <label class="labelStyle">Wiadomość <span>(wymagane)</span></label>
-                    <textarea #messageInput="ngModel" class="contactFormMessage" name="message" rows="10" cols="60" maxlength="3450" required [(ngModel)]='contactEnvelope.messageInput'></textarea>
-                    <div *ngIf="messageInput.invalid && messageInput.touched" class="alert alert-danger textAreaErrorMessageStyle">
+                    <textarea #message="ngModel" class="contactFormMessage" name="message" rows="10" cols="60" maxlength="3450" required [(ngModel)]='contactEnvelope.message'></textarea>
+                    <div *ngIf="message.invalid && message.touched" class="alert alert-danger textAreaErrorMessageStyle">
                         Wprowadź wiadomość.
                     </div>
                 </div>
                 <div class="sendButtonDiv">
-                    <button id="anczeButton" type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid" (click)="sendMessage(form)">Wyślij</button>
+                    <button id="anczeButton" type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid">Wyślij</button>
                 </div>
             </form>
         </div>

@@ -17,7 +17,7 @@ export class TopicDetailsComponent{
     }
 
 ngOnInit(){
-this.event = this.eventService.getEvent(+this.route.snapshot.params['id'])
+    this.eventService.getEvent(+this.route.snapshot.params['id']).subscribe(comingEvent => this.event = comingEvent);
 }
 
 }

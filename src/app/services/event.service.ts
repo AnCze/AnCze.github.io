@@ -1,50 +1,46 @@
-import { Injectable } from '@angular/core'
-import { Subject, Observable } from 'rxjs/RX'
-import { ITopic } from '../models/topic.model'
+import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Observable } from "rxjs/Observable";
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
+import { ITopic } from "../models/topic.model";
 
 @Injectable()
-export class EventService{
-getEvents(): Observable<ITopic[]>{             // Subject is a type of observable
-    let subject = new Subject<ITopic[]>()
-    setTimeout(() => {subject.next(events); subject.complete();}, 100)
-return subject
-}
+export class EventService {
 
-getEvent(id: number): ITopic{
-    return events.find(event => event.id === id)
-}
+    constructor(private http: Http) {
 
-saveEvent(event: any){
-    event.id = 999;
-    event.session =[];
-    events.push(event);
-}
-
-}
-
-const events: ITopic[] = [
-    {
-        id: 1,
-        title: 'Skąd ten pomysł?!',
-        date: new Date('01/23/2017'),
-        category: 'TypeScript',      
-        image: 'app/images/ideaPhoto.jpg',
-        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać'
-    },
-    {
-        id: 2,
-        title: 'Sam nie wiem?!',
-        date: new Date('02/23/2017'),
-        category: 'CSS',
-        image: 'app/images/ideaPhoto.jpg',
-        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać'
-    },
-    {
-        id: 3,
-        title: 'Jakoś idzie?!',
-        date: new Date('03/23/2017'),
-        category: 'HTML',
-        image: 'app/images/ideaPhoto.jpg',
-        body: 'Pewnego czerwcowego dnia wstałem z łóżka i zacząłem się zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać zastanawiać'
     }
-    ]
+
+    getEvents(): Observable<ITopic[]> {
+        return this.http.get('http://localhost:16169/' + 'api/blogtopics')
+            .map(this.extractData)
+            .catch(this.handleError);
+    }    
+
+    getEvent(id: number): Observable<ITopic> {
+        return this.http.get('http://localhost:16169/' + 'api/blogtopic?id=' + id)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    saveEvent(event: any): Observable<ITopic> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post('http://localhost:16169/' + 'api/blogtopic', event, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
+    private extractData(res: Response) {
+        let body = res.json();
+        return body || {};
+    }
+
+    private handleError(error: any) {
+        console.error('post error: ', error);
+        return Observable.throw(error.statusText);
+    }
+}

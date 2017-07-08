@@ -19,7 +19,7 @@
                 <div class="form-group" [ngClass]="{'error': newTopicForm.controls.date?.invalid && newTopicForm.controls.date?.touched}">
                     <label for="eventDate">Data wpisu:</label>
                     <em *ngIf="newTopicForm.controls.date?.invalid && (newTopicForm.controls.date?.touched)">Wymagane</em>
-                    <input (ngModel)="date" name="date" required id="eventDate" type="text" class="form-control" placeholder="Format (dd/mm/yyyy)..." />
+                    <input (ngModel)="date" name="date" required id="eventDate" type="text" class="form-control" placeholder="Format (yyyy/mm/dd)..." />
                 </div>
                 <div class="form-group" [ngClass]="{'error': newTopicForm.controls.category?.invalid && newTopicForm.controls.category?.touched}">
                     <label for="eventCategory">Kategoria:</label>
@@ -40,8 +40,8 @@
                 </div>
                 <div class="form-group" [ngClass]="{'error': newTopicForm.controls.body?.invalid && newTopicForm.controls.body?.touched}">
                     <label for="topicBody">Treść wpisu:</label>
-                    <em *ngIf="newTopicForm.controls.body?.invalid && (newTopicForm.controls.body?.touched)">Wymagane</em>
-                    <textarea (ngModel)="body" name="body" required id="topicBody" type="text" class="form-control" placeholder="Treść wpisu..."></textarea>
+                    <em *ngIf="newTopicForm.controls.topicBody?.invalid && (newTopicForm.controls.topicBody?.touched)">Wymagane</em>
+                    <textarea (ngModel)="topicBody" name="topicBody" required id="topicBody" type="text" class="form-control" placeholder="Treść wpisu..."></textarea>
                 </div>
 
                 <button type="submit" [disabled]="newTopicForm.invalid" class="btn btn-primary">Zapisz</button>

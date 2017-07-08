@@ -8,29 +8,27 @@ import { ContactEnvelope } from '../models/contactEnvelope.model';
 @Injectable()
 export class FormPoster {
 
-    constructor(private http: Http){
+    constructor(private http: Http) {
 
+    }
+
+    posteContactEnvelope(contactEnvelope: ContactEnvelope): Observable<ContactEnvelope> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post('http://localhost:16169/' + 'api/contact', contactEnvelope, options)
+            .map(this.extractData)
+            .catch(this.handleError);
     }
 
     private extractData(res: Response) {
         let body = res.json();
-        return body.fields || { };
+        return body || {};
     }
 
     private handleError(error: any) {
-        console.error('post error: ', error); 
+        console.error('post error: ', error);
         return Observable.throw(error.statusText);
-    }
-
-    posteContactEnvelope( contactEnvelope: ContactEnvelope): Observable<any> {
-        let body = JSON.stringify(contactEnvelope);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-
-        //below is observable which we create abowe
-        return this.http.post('http://localhost:3100/postenvelope', body, options)
-                        .map(this.extractData)
-                        .catch(this.handleError);
     }
 
 }
