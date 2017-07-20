@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { ITopic } from "../models/topic.model";
+import { ITopic } from '../models/topic.model';
 
 @Injectable()
 export class EventService {
@@ -17,7 +17,7 @@ export class EventService {
         return this.http.get('http://localhost:16169/' + 'api/blogtopics')
             .map(this.extractData)
             .catch(this.handleError);
-    }    
+    }
 
     getEvent(id: number): Observable<ITopic> {
         return this.http.get('http://localhost:16169/' + 'api/blogtopic?id=' + id)

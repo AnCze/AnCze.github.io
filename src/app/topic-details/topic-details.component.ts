@@ -1,5 +1,5 @@
-import { Component } from '@angular/core'
-import { EventService } from '../services/event.service'
+import { Component } from '@angular/core';
+import { EventService } from '../services/event.service';
 import { ActivatedRoute } from '@angular/router';
 import { ITopic } from '../models/topic.model';
 
@@ -9,15 +9,15 @@ import { ITopic } from '../models/topic.model';
     styleUrls: ['app/styles.css']
 })
 
-export class TopicDetailsComponent{
-    event: ITopic
+export class TopicDetailsComponent {
+    event: ITopic;
 
-    constructor(private eventService: EventService, private route: ActivatedRoute){
+    constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }
 
-ngOnInit(){
-    this.eventService.getEvent(+this.route.snapshot.params['id']).subscribe(comingEvent => this.event = comingEvent);
-}
+    ngOnInit() {
+        this.eventService.getEvent(+this.route.snapshot.params['id']).subscribe(comingEvent => this.event = comingEvent);
+    }
 
 }

@@ -10,14 +10,13 @@ import { CreateBlogTopic } from './blog/create-blog-topic.component';
 import { BlogResolver } from './services/blog-resolver.service';
 
 export const appRoutes: Routes = [
-      { path: "home", component: HomeComponent},
-      { path: "blog/new", component: CreateBlogTopic, canDeactivate: ['canDeactivateCreateEvent']},
-      { path: "blog", component: BlogComponent, resolve: {events: BlogResolver}},
-      { path: "blog/:id", component: TopicDetailsComponent, canActivate:[RouteActivatorService]},
-      { path: "o mnie", component: AboutMeComponent},
-      { path: "kontakt", component: ContactComponent},
-      { path: "404", component: Error404Component},
-      { path: "", redirectTo: "home", pathMatch: "full"},
-      //{ path: "**", redirectTo: "home", pathMatch: "full"},
-      { path: "user", loadChildren: "app/user/user.module#UserModule"}
-    ]
+      { path: 'home', component: HomeComponent},
+      { path: 'blog/new', component: CreateBlogTopic, canDeactivate: ['canDeactivateCreateEvent']},
+      { path: 'blog', component: BlogComponent, resolve: {events: BlogResolver}},
+      { path: 'blog/:id', component: TopicDetailsComponent, canActivate: [RouteActivatorService]},
+      { path: 'o mnie', component: AboutMeComponent},
+      { path: 'kontakt', component: ContactComponent},
+      { path: '404', component: Error404Component},
+      { path: '', redirectTo: 'home', pathMatch: 'full'},
+      { path: 'user', loadChildren: 'app/user/user.module#UserModule'}
+    ];

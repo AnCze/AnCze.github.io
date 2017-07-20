@@ -14,10 +14,11 @@ export class ContactComponent {
     contactEnvelope = new ContactEnvelope;
 
     imputNameToUpperCase(value: string) {
-        if (value && value.length > 0)
+        if (value && value.length > 0) {
             this.contactEnvelope.firstName = value.charAt(0).toUpperCase() + value.slice(1);
-        else
+        } else {
             this.contactEnvelope.firstName = value;
+        }
     }
 
     constructor(private formPoster: FormPoster, private toastr: ToastrService) {
@@ -35,6 +36,6 @@ export class ContactComponent {
             err => {
                 this.toastr.error('Wiadomość nie została wysłana!');
             });
-            
+
     }
 }

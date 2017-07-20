@@ -8,20 +8,20 @@ import { ITopic } from '../models/topic.model';
     styleUrls: ['app/styles.css']
 })
 
-export class BlogComponent implements OnInit { 
-    events: ITopic[]
-    filterBy: string = 'wszystkie';
+export class BlogComponent implements OnInit {
+    events: ITopic[];
+    filterBy = 'wszystkie';
     activeEvents: ITopic[] = [];
     constructor(private eventService: EventService, private route: ActivatedRoute) {
     }
 
-    ngOnInit() {        
+    ngOnInit() {
         this.events = this.route.snapshot.data['events'];
         this.activeEvents = this.events.slice(0);
     }
 
     handleEventClicked(data: any) {
-        console.log('received: ', data)
+        console.log('received: ', data);
     }
 
     changeFilter() {
@@ -30,15 +30,14 @@ export class BlogComponent implements OnInit {
         }
     }
 
-    
+
     filterTopic(filter: string) {
         if (filter === 'wszystkie') {
-            this.activeEvents = this.events;            
-        }
-        else {
+            this.activeEvents = this.events;
+        } else {
             this.activeEvents = this.events.filter(event => {
                 return event.category.toLocaleLowerCase() === filter;
-            })
+            });
         }
     }
 }

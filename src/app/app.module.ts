@@ -1,10 +1,10 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent }  from './app.component';
+import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
 import { AboutMeComponent } from './aboutMe/aboutMe.component';
@@ -22,42 +22,43 @@ import { UserAuthService } from './services/user-auth.service';
 import { ToastrService } from './services/toastr.service';
 
 @NgModule({
-  imports:      [ 
+  imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes), 
-    ],
-  declarations: [ 
-    AppComponent, 
-    BlogComponent, 
-    BlogTopicComponent, 
-    HomeComponent, 
-    AboutMeComponent, 
-    ContactComponent, 
+    RouterModule.forRoot(appRoutes),
+  ],
+  declarations: [
+    AppComponent,
+    BlogComponent,
+    BlogTopicComponent,
+    HomeComponent,
+    AboutMeComponent,
+    ContactComponent,
     TopicDetailsComponent,
     Error404Component,
     CreateBlogTopic
-     ],
-  providers: [ 
-    FormPoster, 
-    EventService, 
+  ],
+  providers: [
+    FormPoster,
+    EventService,
     RouteActivatorService,
     BlogResolver,
     UserAuthService,
     ToastrService,
-    { 
-      provide: 'canDeactivateCreateEvent', 
-      useValue: checkDirtyState 
-    } 
+    {
+      provide: 'canDeactivateCreateEvent',
+      useValue: checkDirtyState
+    }
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-function checkDirtyState(component: CreateBlogTopic){
-  if(component.isDirty)
-  return window.confirm('You have not saved this topic, do you really want to cancel?')
-  return true
+function checkDirtyState(component: CreateBlogTopic) {
+  if (component.isDirty) {
+    return window.confirm('You have not saved this topic, do you really want to cancel?');
+  }
+  return true;
 }

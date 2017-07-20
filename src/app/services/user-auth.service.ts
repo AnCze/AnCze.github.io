@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { IUser } from '../models/user.model';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Observable } from "rxjs/Observable";
-//import "rxjs/Rx";
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserAuthService {
-    currentUser: IUser
+    currentUser: IUser;
 
     constructor(private http: Http) {
 
@@ -18,7 +17,7 @@ export class UserAuthService {
             userName: userName,
             firstName: 'Andrzej',
             lastName: 'Czechowski'
-        }
+        };
     }
 
     isAuthenticated() {
@@ -26,8 +25,8 @@ export class UserAuthService {
     }
 
     updateCurrentUser(firstName: string, lastName: string) {
-        this.currentUser.firstName = firstName
-        this.currentUser.lastName = lastName
+        this.currentUser.firstName = firstName;
+        this.currentUser.lastName = lastName;
     }
 
     logout() {
@@ -36,7 +35,6 @@ export class UserAuthService {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        //below is observable which we create abowe
         return this.http.post('http://localhost:3100/logout', options)
             .map(this.extractData)
             .catch(this.handleError);

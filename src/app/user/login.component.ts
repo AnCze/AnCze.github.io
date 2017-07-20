@@ -12,11 +12,11 @@ export class LoginComponent {
     }
 
     login(loginFormValues: any) {
-        this.userAuthService.loginUser(loginFormValues.userName, loginFormValues.password)
-        this.router.navigate(['blog'])
+        this.userAuthService.loginUser(loginFormValues.userName, loginFormValues.password);
+        this.router.navigate(['blog']);
     }
 
     cancel() {
-        this.router.navigate(['blog'])
+        this.router.navigate(['blog']);
     }
 }

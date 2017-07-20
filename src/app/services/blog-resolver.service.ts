@@ -5,11 +5,11 @@ import { EventService } from './event.service';
 @Injectable()
 
 export class BlogResolver implements Resolve<any> {
-    constructor(private eventService: EventService){
+    constructor(private eventService: EventService) {
 
     }
 
-    resolve(){
-        return this.eventService.getEvents().map(events => events)
+    resolve() {
+        return this.eventService.getEvents().map(events => events);
     }
 }

@@ -1,6 +1,6 @@
-export class ContactEnvelope{
+export class ContactEnvelope {
         id: number;
         firstName: string;
         email: string;
-        message: string;   
+        message: string;
 }

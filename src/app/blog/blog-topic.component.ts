@@ -8,10 +8,10 @@ import { ITopic } from '../models/topic.model';
 })
 
 export class BlogTopicComponent {
-   @Input() event: ITopic;
-   @Output() eventClick = new EventEmitter();
+    @Input() event: ITopic;
+    @Output() eventClick = new EventEmitter();
 
-   readMore(){
-       this.eventClick.emit(this.event.title)
-   }
+    readMore() {
+        this.eventClick.emit(this.event.title);
+    }
 }
